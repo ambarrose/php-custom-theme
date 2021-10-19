@@ -1,0 +1,48 @@
+/*
+Theme Name: Ambar's theme
+
+Theme ULI: http://yourwebsite.com/theme
+
+Author: Ambar
+
+Author URI: http://yourwebsite.com/
+
+Description: This is my first custom theme.
+
+Version: 1.0.0
+
+License: GNU General Public License v2 or later
+
+Tags: minimal, cool, whitespace
+*/
+
+body{
+  background-color: rgb(123, 119, 124);
+}
+
+h1,
+h3,
+h5,
+p {
+  color: white;
+}
+
+#menu-main-menu li{
+  padding-left: 50px;
+}
+.card-image-top {
+  width: 414px;
+  height: 300px;
+  object-fit: cover;
+}
+/* #image {
+  width: 100%;
+  height: 100%;
+} */
+
+#logo {
+  height:100px;
+}
+.woocommerce .cart-collaterals, .woocommerce-page .cart-collaterals {
+    width: 40%;
+}
