@@ -13,9 +13,9 @@
   <body <?php body_class(); ?>>
   <?php wp_head(); ?>
 
-		  <nav id="pastel-nav" class="navbar navbar-expand-lg navbar-light bg-info">
+		  <nav id="pastel-nav" class="navbar navbar-expand-lg navbar-light bg-dark">
 		    <div class="container-fluid">
-		      <a class="navbar" href="<?php echo home_url(); ?>"><img id="logo" src="<?php bloginfo('stylesheet_directory') ?>/images/ambarRound.png" alt="logo"></a>
+		      <a class="navbar" href="<?php echo home_url(); ?>"><img id="logo" src="<?php bloginfo('stylesheet_directory') ?>/images/eco-logo.png" alt="logo"></a>
 		      <button class="navbar-toggler text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		        <span class="navbar-toggler-icon"></span>
 		      </button>

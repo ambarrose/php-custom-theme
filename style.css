@@ -42,7 +42,10 @@ p {
 
 #logo {
   height:100px;
+  margin-left: 100px;
 }
 .woocommerce .cart-collaterals, .woocommerce-page .cart-collaterals {
     width: 40%;
 }
+
+/* calculator style starts

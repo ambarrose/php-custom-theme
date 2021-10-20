@@ -17,7 +17,7 @@ add_action('admin_enqueue_scripts','custom_dashboard_css');
 
 add_action('wp_enqueue_scripts', 'custom_theme_assets');
 
-register_nav_menus(['primary'=> 'Tims Primary Menu']);
+register_nav_menus(['primary'=> 'Ambars Primary Menu']);
 
 // customise the excerpt length
 function new_excerpt_length() {

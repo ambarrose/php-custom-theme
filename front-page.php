@@ -2,8 +2,11 @@
   <div class="container fluid mt-5 mb-5">
      <div class="row">
        <div class="col-12">
-        <h3>Showing all posts</h3>
+        <h3>Welcome message</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
       </div>
+      <button type="button" name="button"><a href="<?php # ?>">Sign up link</a></button>
+
         <?php
         if (have_posts() ) :
             while (have_posts() ) : the_post(); ?>
@@ -43,7 +46,7 @@
       <div class="container fluid mt-5 mb-5">
        <div class="row">
            <div class="col-12">
-            <h3>Check out my fruit</h3>
+            <h3>key issues</h3>
           </div>
         <?php
         query_posts(array(
@@ -124,6 +127,10 @@
           ?>
   </div>
 </div>
+  <!-- //this is a contact form plugin -->
+    <?php echo do_shortcode('[contact-form-7 id="34" title="Contact form 1"]'); ?>
+
+
         <!-- <p>This is front-page.php</p> -->
 </body>
 
