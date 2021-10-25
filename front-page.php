@@ -1,18 +1,29 @@
 <?php get_header(); ?>
-  <div class="container fluid mt-5 mb-5">
+
+
+    <div id="full-page">
+      <img src="images/fern.jpg" alt="">
+
+        <h1 class="welcome text-center">Environment & Conservation <br>
+          Organisations of Aotearoa New Zealand</h1>
+    </div>
+
+    <div id="signUp">
+      <button id="link" type="button" name="button" href="<?php echo get_page_link(get_page_by_path('join-us')); ?>">Sign up link</button>
+    </div>
+
+
+    <div class="container fluid mt-5 mb-5">
      <div class="row">
        <div class="col-12">
-        <h3>Welcome message</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        <h3>News items</h3>
       </div>
-      <button type="button" name="button"><a href="<?php # ?>">Sign up link</a></button>
-
         <?php
         if (have_posts() ) :
             while (have_posts() ) : the_post(); ?>
 
             <!-- here's the area where it loops over each post -->
-            <div class="col col-md-4">
+            <div class="col col-md-3">
                  <div class="card mb-3" style="width: 100%">
                    <div class="card-body">
                      <h5 class="card-title">
@@ -20,13 +31,7 @@
                        <?php the_title() ?>
                        </a>
                      </h5>
-                     <div>
-                       <?php $categories = get_the_category();
-                            foreach($categories as $category){
-                              echo '<a href="' . get_category_link($category->term_id) . '">' . $category->cat_name . '</a>';
-                            }
-                        ?>
-                     </div>
+
                      <p>Posted: <?php echo get_the_date('F j, Y'); ?></p>
                      <p>Posted by: <?php the_author('F j, Y'); ?></p>
                      <p><?php the_time(); ?></p>
@@ -114,7 +119,8 @@
           ?>
   </div>
 </div>
-
+  <?php echo get_theme_mod("my_new_message")
+  ?>
 
         <!-- <p>This is front-page.php</p> -->
 </body>

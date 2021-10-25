@@ -27,18 +27,11 @@ p {
   color: white;
 }
 
-#menu-main-menu li{
-  padding-left: 50px;
-}
 .card-image-top {
   width: 414px;
   height: 300px;
   object-fit: cover;
 }
-/* #image {
-  width: 100%;
-  height: 100%;
-} */
 
 #logo {
   height:100px;
@@ -51,6 +44,38 @@ p {
   background-color: #1A7375;
 }
 
-#navbarNav{
-  margin-right: 100px;
+#logo{
+  margin-left: 100px;
+}
+
+#about-link{
+  height:50px;
+  width:200px;
+  margin-left: 800px;
+  text-align: center;
+}
+
+#join-link{
+  height:50px;
+  width:200px;
+  text-align: center;
+}
+
+#full-page{
+  background-image: url(images/fern.jpg);
+  width: 100%;
+  height:700px;
+}
+
+.welcome{
+  margin-top: 250px;
+}
+
+#signUp{
+  background-color: #1A7375;
+  height: 200px;
+}
+
+#link{
+  
 }

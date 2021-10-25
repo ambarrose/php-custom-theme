@@ -14,15 +14,10 @@
   <?php wp_head(); ?>
 
 		  <nav id="nav" class="navbar navbar-expand-lg">
-		    <div class="container">
 
+				<div class="container">
 		      <a class="navbar" href="<?php echo home_url(); ?>"><img id="logo" src="<?php bloginfo('stylesheet_directory') ?>/images/eco-logogreenBG.png" alt="logo"></a>
-
-
-		      <div  id="navbarNav">
-						<ul class="primary-nav">
-						<?php  wp_nav_menu_no_ul(); ?>
-						</ul>
-		      </div>
+					<a id="about-link" class="nav-link text-light" href="<?php echo get_page_link(get_page_by_path('about-eco')); ?>">About</a>
+					<a id="join-link" class="nav-link text-light " href="<?php echo get_page_link(get_page_by_path('join-us')); ?>">Join us</a>
 		    </div>
 		  </nav>

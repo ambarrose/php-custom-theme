@@ -222,4 +222,88 @@ function custom_override_default_address_fields( $address_fields ) {
   return $address_fields;
 }
 
+// Add a custom section to theme customiser
+function my_first_customised_option($wp_customize){
+  $wp_customize->add_section("ambars_section",
+   array(
+    "title" => "My first section",
+    "custom_setting",
+    "priority" => 1000
+  ));
+
+  // add a new setting
+  $wp_customize->add_setting("my_custom_message",
+  array(
+    "default" => ""
+  ));
+  $wp_customize->add_setting("my_new_message",
+  array(
+    "default" => ""
+  ));
+  // add a new number setting
+  $wp_customize->add_setting("my_custom_number", array(
+    "default" => 0
+  ));
+
+  // Add a new control
+  $wp_customize->add_control("my_custom_message",
+  array(
+    "label" => "Enter a custom message",
+    "section" => "ambars_section",
+    "settings" => "my_custom_message",
+    "type" => "textarea"
+  ));
+
+  $wp_customize->add_control("my_new_message",
+  array(
+    "label" => "Enter a custom message",
+    "section" => "ambars_section",
+    "settings" => "my_new_message",
+    "type" => "textarea"
+  ));
+
+  // heres the control for our new number
+  $wp_customize->add_control("my_custom_number", array(
+    "label" => "Enter a number",
+    "section" => "ambars_section",
+    "settings" => "my_custom_number",
+    "type" => "number",
+    'input_attrs' => array(
+      'min' => 0,
+      'max' => 10
+    )
+  ));
+}
+
+  add_action("customize_register","my_first_customised_option");
+
+  // new section -------
+
+  function new_customised_option($wp_customize){
+    $wp_customize->add_section("number_section",
+     array(
+      "title" => "My customised number section",
+      "custom_setting",
+      "priority" => 0
+    ));
+
+    // add a new number setting
+    $wp_customize->add_setting("custom_number", array(
+      "default" => 0
+    ));
+
+    // heres the control for our new number
+    $wp_customize->add_control("custom_number", array(
+      "label" => "Choose a col amount",
+      "section" => "number_section",
+      "settings" => "custom_number",
+      "type" => "number",
+      'input_attrs' => array(
+        'min' => 0,
+        'max' => 10
+      )
+    ));
+  }
+
+  add_action("customize_register","new_customised_option");
 ?>
