@@ -42,18 +42,15 @@ p {
 
 #logo {
   height:100px;
-  margin-left: 100px;
 }
 .woocommerce .cart-collaterals, .woocommerce-page .cart-collaterals {
     width: 40%;
 }
 
-#pastel-nav{
+#nav{
   background-color: #1A7375;
 }
 
 #navbarNav{
-  margin-left: 1000px;
+  margin-right: 100px;
 }
-
-/* calculator style starts

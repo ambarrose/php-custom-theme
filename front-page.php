@@ -72,13 +72,6 @@
                          </a>
                        </h5>
                        <span><b>Featured!</b></span>
-                         <?php
-                         $fruit_price = get_post_meta(get_the_ID(), 'price_input', true);
-                         if ($fruit_price){
-                           echo "<p><b>Price:</b>";
-                           echo '$' . $fruit_price . "</p>";
-                         };
-                       ?>
                        <p>Posted2: <?php echo get_the_date(); ?></p>
                        <p>Posted by: <?php the_author('F j, Y'); ?></p>
                        <p><?php the_time(); ?></p>
@@ -102,12 +95,6 @@
                        <?php the_title() ?>
                        </a>
                      </h5>
-                     <p><b>Price:</b>
-                       <?php
-                       $fruit_price = get_post_meta(get_the_ID(), 'price_input', true);
-                       echo '$' . $fruit_price;
-                     ?>
-                    </p>
                      <p>Posted: <?php the_date('F j, Y'); ?></p>
                      <p>Posted by: <?php the_author('F j, Y'); ?></p>
                      <p><?php the_time(); ?></p>
@@ -127,8 +114,6 @@
           ?>
   </div>
 </div>
-  <!-- //this is a contact form plugin -->
-    <?php echo do_shortcode('[contact-form-7 id="34" title="Contact form 1"]'); ?>
 
 
         <!-- <p>This is front-page.php</p> -->
