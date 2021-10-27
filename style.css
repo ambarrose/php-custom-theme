@@ -16,20 +16,13 @@ License: GNU General Public License v2 or later
 Tags: minimal, cool, whitespace
 */
 
-body{
-  background-color: rgb(123, 119, 124);
-}
-
 h1,
 h3,
-h5,
-p {
+h5 {
   color: white;
 }
 
 .card-image-top {
-  width: 414px;
-  height: 300px;
   object-fit: cover;
 }
 
@@ -51,7 +44,7 @@ p {
 #about-link{
   height:50px;
   width:200px;
-  margin-left: 800px;
+  margin-left: 700px;
   text-align: center;
 }
 
@@ -67,6 +60,40 @@ p {
   height:700px;
 }
 
+#about{
+  background-image: url(images/planting.jpg);
+  width: 100%;
+  height: 600px;
+}
+
+#about2{
+  background-image: url(images/forest.jpg);
+  width: 100%;
+  height: 600px;
+}
+
+#about3{
+  background-image: url(images/fern2.jpg);
+  width: 100%;
+  height: 600px;
+}
+
+#info{
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 80px;
+  width: 800px;
+}
+
+#support{
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 30px;
+  width: 800px;
+}
+
 .welcome{
   margin-top: 250px;
 }
@@ -74,8 +101,31 @@ p {
 #signUp{
   background-color: #1A7375;
   height: 200px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.friend{
+  padding-top: 50px;
 }
 
 #link{
-  
+  background-color: #A22F2C;
+  border: none;
+  width: 200px;
+  height: 40px;
+  margin-top: 20px;
 }
+#link:hover{
+  background-color: #161414;
+}
+ .container {
+   border-bottom: 2px solid #1A7375;
+ }
+
+.footer{
+    background-color: #1A7375;
+  }
