@@ -21,28 +21,8 @@ register_nav_menus(['primary'=> 'Ambars Primary Menu']);
 
 // customise the excerpt length
 function new_excerpt_length() {
-  return 20;
-}
-
-function wp_nav_menu_no_ul()
-{
-    $options = array(
-        'echo' => false,
-        'container' => false,
-        'theme_location' => 'primary',
-        'fallback_cb'=> 'default_page_menu'
-    );
-
-    $menu_args = wp_nav_menu($options);
-    echo preg_replace(array(
-        '#^<ul[^>]*>#',
-        '#</ul>$#'
-    ), '', $menu_args);
-
-}
-
-function default_page_menu() {
-   wp_list_pages('title_li=');
+  $new_length = get_theme_mod("custom_excerpt_length");
+  return $new_length;
 }
 
 // use a filter hook to modify Wordpress function at runtime
@@ -203,23 +183,51 @@ function create_sports_taxonomy() {
 // hook in our action to set up our custom taxonomy
 add_action('init','create_sports_taxonomy', 0);
 
+// setting up custom taxonomies (or categories) for our custom post type sports
+
+function create_fruit_taxonomy() {
+  $labels = array(
+    'name' => 'Color',
+    'singular_name' => 'Color',
+    'search_items' => 'Search Colors',
+    'all_items' => 'All Colors',
+    'parent_item' => 'Parent Color',
+    'parent_item_colon' => 'Parent Color:',
+    'edit_item' => 'Edit Color',
+    'update_item' => 'Update Color',
+    'add_new_item' => 'Add New Color',
+    'new_item_name' => 'New Color Name',
+    'menu_name' => 'Color'
+  );
+  // register the taxonomy
+  register_taxonomy(
+    'color', array('fruit'), array(
+      'hierarchical' => true,
+      'labels' => $labels,
+      'show_ui' => true
+    )
+  );
+}
+
+// hook in our action to set up our custom taxonomy
+add_action('init','create_fruit_taxonomy', 0);
+
 // Customise the woocommerce checkout feilds
 
 add_filter('woocommerce_checkout_fields', 'custom_placeholder');
+
 function custom_placeholder($fields) {
   $fields['order']['order_comments']['placeholder'] = "A new placeholder";
-  $fields['order']['order_comments']['label'] = "Delivery Instructions";
-  //make phone an email fields unrequired
-  $fields['billing']['billing_phone']['required'] = false;
-  $fields['billing']['billing_email']['required'] = false;
+  $fields['order']['order_comments']['label'] = "Delivery instructions";
   return $fields;
 }
 
-add_filter( 'woocommerce_default_address_fields' , 'custom_override_default_address_fields' );
-function custom_override_default_address_fields( $address_fields ) {
-  // make country field unrequired
-  $address_fields['country']['required'] = false;
-  return $address_fields;
+// make phone and email fields unrequired
+add_filter( 'woocommerce_billing_fields', 'phone_email_custom');
+function phone_email_custom($fields){
+   $fields['billing_phone']['required'] = false;
+   $fields['billing_email']['required'] = false;
+   return $fields;
 }
 
 // Add a custom section to theme customiser
@@ -227,8 +235,7 @@ function my_first_customised_option($wp_customize){
   $wp_customize->add_section("ambars_section",
    array(
     "title" => "My first section",
-    "custom_setting",
-    "priority" => 1000
+    "priority" => 0
   ));
 
   // add a new setting
@@ -245,6 +252,68 @@ function my_first_customised_option($wp_customize){
     "default" => 0
   ));
 
+  // add a new number setting for custom excerpts
+$wp_customize->add_setting("custom_excerpt_length", array(
+  "default" => 5
+));
+
+// add a new color picker setting
+$wp_customize->add_setting("color_picker", array(
+  "default" => ""
+));
+
+// add a new image upload setting
+$wp_customize->add_setting("custom_image", array(
+  "default" => ""
+));
+
+// add a new dropdown select setting
+$wp_customize->add_setting("my_custom_select", array(
+  "default" => "show_posts"
+));
+
+$wp_customize->add_setting("my_custom_select2", array(
+  "default" => "show_related"
+));
+
+$wp_customize->add_control("my_custom_select", array(
+  "label" => "Show the latest posts on the front page",
+  "section" => "ambars_section",
+  "settings" => "my_custom_select",
+  "type" => "select",
+  "choices" => array(
+    "show_posts" => 'Yes',
+    "hide_posts" => 'No'
+  )
+));
+
+$wp_customize->add_control("my_custom_select2", array(
+  "label" => "Show or hide Woocommer",
+  "section" => "ambars_section",
+  "settings" => "my_custom_select",
+  "type" => "select",
+  "choices" => array(
+    "show_posts" => 'Yes',
+    "hide_posts" => 'No'
+  )
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'color_picker', array(
+    'label' => 'Link Colors',
+    'section' => 'ambars_section',
+    'settings' => 'color_picker'
+  )));
+
+// add our custom image control
+$wp_customize->add_control(new WP_Customize_Image_Control(
+  $wp_customize, 'custom_image', array(
+      'label' => 'Upload a custom image',
+      'settings' => 'custom_image',
+      'section' => 'tims_section',
+      'priority' => 1000
+  ))
+);
+
   // Add a new control
   $wp_customize->add_control("my_custom_message",
   array(
@@ -253,6 +322,7 @@ function my_first_customised_option($wp_customize){
     "settings" => "my_custom_message",
     "type" => "textarea"
   ));
+
 
   $wp_customize->add_control("my_new_message",
   array(
@@ -270,7 +340,18 @@ function my_first_customised_option($wp_customize){
     "type" => "number",
     'input_attrs' => array(
       'min' => 0,
-      'max' => 10
+      'max' => 12
+    )
+  ));
+
+  $wp_customize->add_control("custom_excerpt_length", array(
+    "label" => "Excerpt length",
+    "section" => "ambars_section",
+    "settings" => "custom_excerpt_length",
+    "type" => "number",
+    'input_attrs' => array(
+      'min' => 5,
+      'max' => 50
     )
   ));
 }
@@ -306,4 +387,60 @@ function my_first_customised_option($wp_customize){
   }
 
   add_action("customize_register","new_customised_option");
+
+  // add a custom section to your theme customiser
+function bootstrap_changes($wp_customize) {
+  $wp_customize->add_section("bootstrap_section", array(
+    "title" => "Bootstrap settings",
+    "priority" => 0
+  ));
+
+  // add a new number setting
+  $wp_customize->add_setting("my_custom_col_size", array(
+    "default" => 4
+  ));
+
+  // heres the control for our new number
+  $wp_customize->add_control("my_custom_col_size", array(
+    "label" => "Enter a number",
+    "section" => "bootstrap_section",
+    "settings" => "my_custom_col_size",
+    "type" => "number",
+    'input_attrs' => array(
+      'min' => 6,
+      'max' => 12
+    )
+  ));
+}
+
+add_action("customize_register", "bootstrap_changes");
+
+function generate_special_css() {
+  $color_picker = get_theme_mod('color_picker');
+  ?>
+  <style type="text/css">
+    .card-title a {
+      color: <?php echo $color_picker; ?>
+    }
+
+  </style>
+  <?php
+}
+
+add_action('wp_head','generate_special_css');
+
+/* Add Show All Products to Woocommerce Shortcode */
+function woocommerce_shortcode_display_all_products($args)
+{
+ if(strtolower(@$args['post__in'][0])=='all')
+ {
+  global $wpdb;
+  $args['post__in'] = array();
+  $products = $wpdb->get_results("SELECT ID FROM ".$wpdb->posts." WHERE `post_type`='product'",ARRAY_A);
+  foreach($products as $k => $v) { $args['post__in'][] = $products[$k]['ID']; }
+ }
+ return $args;
+}
+add_filter('woocommerce_shortcode_products_query', 'woocommerce_shortcode_display_all_products');
+
 ?>

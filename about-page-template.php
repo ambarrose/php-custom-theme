@@ -17,17 +17,17 @@ Template Name: About page template
     <h1 class="text-light">A bit about us</h1><br>
 
     <p class="text-light">ECO was founded in 1971 as CoEnCo to meet the needs of the conservation community. We became ECO in 1976. We are a non-profit network of 50+ organisations with a concern for conservation and the environment.
-<br><br>
-Our membership includes large international groups such as Greenpeace and Friends of the Earth, national groups including National Council of Women, as well as small local groups such as Kapiti Environmental Action and Save the Otago Peninsula, and issue oriented groups like the Yellow-eyed Penguin Trust.
-<br><br>
-ECO has been centrally involved in campaigns to protect native forests, lakes and rivers, the reform of the Mining Act and defeat of the National Development Act, and in supporting the Resource Management Act and the establishment of the Department of Conservation and Ministry for the Environment. ECO continues to be at the forefront of environmental campaigns on fisheries, transport and environmental management.
-<br><br>
-ECO's work is carried out largely by volunteers, supported by a small office and resource centre in Wellington. There are around 500 "Friends of ECO," individual subscribers and others who support our work.</p>
+    <br><br>
+    Our membership includes large international groups such as Greenpeace and Friends of the Earth, national groups including National Council of Women, as well as small local groups such as Kapiti Environmental Action and Save the Otago Peninsula, and issue oriented groups like the Yellow-eyed Penguin Trust.
+    <br><br>
+    ECO has been centrally involved in campaigns to protect native forests, lakes and rivers, the reform of the Mining Act and defeat of the National Development Act, and in supporting the Resource Management Act and the establishment of the Department of Conservation and Ministry for the Environment. ECO continues to be at the forefront of environmental campaigns on fisheries, transport and environmental management.
+    <br><br>
+    ECO's work is carried out largely by volunteers, supported by a small office and resource centre in Wellington. There are around 500 "Friends of ECO," individual subscribers and others who support our work.</p>
   </div>
 </div>
 
 <div id="about2">
-  <img src="images/forest.jpg" alt="">
+  <img src="images/river.jpg" alt="">
 
   <div id="info">
 

@@ -3,15 +3,17 @@
     <div id="full-page">
       <img src="images/fern.jpg" alt="">
 
-        <h1 class="welcome text-center">Environment & Conservation <br>
-          Organisations of Aotearoa New Zealand</h1>
+        <h1 class="welcome text-center">Environment & Conservation<br>Organisations of Aotearoa New Zealand</h1>
     </div>
 
     <div id="signUp">
       <h3 class="friend text-light">Become a Friend of ECO</h3>
-      <button id="link" class="rounded-pill text-light" type="button" name="button"><a id="join-link" class="nav-link text-light " href="<?php echo get_page_link(get_page_by_path('members')); ?>">Sign-up & Support</a></button>
+      <button id="link" class="rounded-pill text-light" type="button" name="button"><a id="join-link" class="nav-link text-light " href="<?php echo get_page_link(get_page_by_path('join-us')); ?>">Sign-up & Support</a></button>
     </div>
 
+    <?php if(get_theme_mod("my_custom_select") === 'show_posts'){
+
+    ?>
     <div class="container fluid mt-5 mb-5 text-dark">
      <div class="row">
        <div class="col-12">
@@ -41,8 +43,9 @@
             </div>
         <?php endwhile;
             else : echo '<p>There are no posts!</p>';
-        endif;
+        endif; }
         ?>
+
       </div>
     </div>
 
@@ -116,6 +119,10 @@
 </div>
   <?php echo get_theme_mod("my_new_message")
   ?>
+  <?php echo get_theme_mod("my_custom_select")
+  ?>
+
+
 
         <!-- <p>This is front-page.php</p> -->
 </body>
