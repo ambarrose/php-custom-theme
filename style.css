@@ -15,9 +15,6 @@ License: GNU General Public License v2 or later
 
 Tags: minimal, cool, whitespace
 */
-body{
-  background-color: white;
-}
 
 h1,
 h3,
@@ -25,8 +22,14 @@ h5 {
   color: white;
 }
 
+.card{
+  /* width: 500px; */
+  height: 400px;
+}
 .card-image-top {
-  object-fit: cover;
+  width: 100%!important;
+  height: 200px !important;
+  object-fit: cover!important;
 }
 
 #logo {
@@ -45,15 +48,22 @@ h5 {
 }
 
 #about-link{
+  border: 2px solid #232829;
   height:50px;
-  width:200px;
+  width:140px;
   margin-left: 700px;
   text-align: center;
 }
 
+#about-link:hover,
+#join-link:hover{
+  background-color: #232829;
+}
+
 #join-link{
+  border: 2px solid #232829;
   height:50px;
-  width:200px;
+  width:140px;
   text-align: center;
 }
 
@@ -64,6 +74,15 @@ h5 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#main{
+  background-color: white;
+  border-bottom: 2px solid #1A7375;
+}
+
+.row{
+  margin-bottom: 40px;
 }
 
 #about{
@@ -110,7 +129,6 @@ h5 {
   background-size: cover;
 }
 
-
 #support{
   justify-content: center;
   align-items: center;
@@ -118,7 +136,6 @@ h5 {
   margin-top: 30px;
   width: 800px;
 }
-
 
 .welcome{
   margin-top: 300px;
@@ -148,10 +165,13 @@ h5 {
 #link:hover{
   background-color: #161414;
 }
- .container {
-   border-bottom: 2px solid #1A7375;
- }
+
 
 .footer{
     background-color: #1A7375;
+    height:80px;
   }
+
+.year{
+  margin-left: 280px;
+}

@@ -1,30 +1,17 @@
 <?php wp_footer(); ?>
 
-  <div class="footer container-fluid pt-4 pt-md-5">
+  <div class="footer container-fluid pt-4">
       <div class="row">
-        <div class="col-12 col-md">
-          <small class="d-block mb-3 text-muted">© 2021</small>
+        <div class="year col-8 col-md ml-4">
+          <small class="text-light">© 2021</small>
         </div>
-        <div class="col-6 col-md">
-          <?php wp_list_pages(); ?>
-        </div>
-        <div class="col-6 col-md">
-          <h5>Resources</h5>
-          <ul class="list-unstyled text-small">
-            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
-            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
-            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
-            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-md">
-          <h5>About</h5>
-          <ul class="list-unstyled text-small">
-            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
-            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
-            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
-            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
-          </ul>
+        <div class="col-8 pl-4">
+
+            <a id="btn" class="link-light text-decoration-none mx-5" href="#">About us</a>
+            <a id="btn" class="link-light text-decoration-none mx-5" href="#">Join us</a>
+            <a id="btn" class="link-light text-decoration-none mx-5" href="#">News</a>
+            <a id="btn" class="link-light text-decoration-none mx-5" href="#">Key items</a>
+
         </div>
       </div>
     </div>

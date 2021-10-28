@@ -8,13 +8,13 @@
 
     <div id="signUp">
       <h3 class="friend text-light">Become a Friend of ECO</h3>
-      <button id="link" class="rounded-pill text-light" type="button" name="button"><a id="join-link" class="nav-link text-light " href="<?php echo get_page_link(get_page_by_path('join-us')); ?>">Sign-up & Support</a></button>
+      <button id="link" class="rounded-pill text-light" type="button" name="button"><a class="nav-link text-light " href="<?php echo get_page_link(get_page_by_path('join-us')); ?>">Sign-up & Support</a></button>
     </div>
 
     <?php if(get_theme_mod("my_custom_select") === 'show_posts'){
 
     ?>
-    <div class="container fluid mt-5 mb-5 text-dark">
+    <div id="main" class="container fluid mt-5 mb-5 text-dark">
      <div class="row">
        <div class="col-12">
         <h2>News items</h2>
@@ -45,11 +45,8 @@
             else : echo '<p>There are no posts!</p>';
         endif; }
         ?>
-
       </div>
     </div>
-
-
 
       <div class="container fluid mt-5 mb-5">
        <div class="row">
@@ -62,16 +59,13 @@
           )
         );
         ?>
-          <?php
-          if (have_posts() ) : $postcount = 0;
-              while (have_posts() ) : the_post();
-                  $postcount++;
-                  if($postcount == 1) {
-              ?>
+        <?php
+        if (have_posts() ) :
+            while (have_posts() ) : the_post(); ?>
 
               <!-- here's the area where it loops over each post -->
               <div class="col col-md-3">
-                   <div class="card mb-3" style="width: 100%">
+                   <div class="card mb-3">
                      <?php the_post_thumbnail("medium", ['class'=>'card-img-top']); ?>
                      <div class="card-body">
                        <h5 class="card-title">
@@ -87,29 +81,7 @@
                      </div>
                    </div>
               </div>
-            <?php
-            // closing the if statement
-          }else{
-            ?>
-            <div class="col col-md-4">
-                 <div class="card mb-3" style="width: 100%">
-                   <?php the_post_thumbnail("medium_large", ['class'=>'card-img-top']); ?>
-                   <div class="card-body">
-                     <h5 class="card-title">
-                       <a href="<?php the_permalink(); ?>">
-                       <?php the_title() ?>
-                       </a>
-                     </h5>
 
-                     <p><?php the_time(); ?></p>
-                     <p class="card-text"><?php the_excerpt(); ?></p>
-
-                     <button id="link" class="rounded-pill text-light" type="button" name="button" href="<?php the_permalink(); ?>">Read More</button>
-                   </div>
-                 </div>
-            </div>
-            <?php
-          };  ?>
           <?php
         endwhile;
               else : echo '<p>There are no posts!</p>';
