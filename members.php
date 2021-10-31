@@ -25,10 +25,12 @@ Template Name: Sign up template
     Receive invitations to conferences and seminars;
     Enable ECO to develop and realise its long-term environmental goals.
     <br><br><br>
-    <?php
-    echo do_shortcode('[products ids="all"]');
+    <div class="option-cards text-light">
+      <?php
+      echo do_shortcode('[products ids="all"]');
+       ?>
+    </div>
 
-     ?>
   </div>
 
 </div>

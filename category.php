@@ -2,7 +2,7 @@
   <div class="container fluid mt-5 mb-5">
      <div class="row">
        <div class="col-12">
-        <h3>Category: <?php single_cat_title(); ?></h3>
+        <h3>Category: <?php single_cart_title(); ?></h3>
       </div>
         <?php
         if (have_posts() ) :

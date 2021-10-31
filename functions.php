@@ -254,7 +254,7 @@ function my_first_customised_option($wp_customize){
 
   // add a new number setting for custom excerpts
 $wp_customize->add_setting("custom_excerpt_length", array(
-  "default" => 5
+  "default" => 500
 ));
 
 // add a new color picker setting
@@ -290,7 +290,7 @@ $wp_customize->add_control("my_custom_select", array(
 $wp_customize->add_control("my_custom_select2", array(
   "label" => "Show or hide Woocommer",
   "section" => "ambars_section",
-  "settings" => "my_custom_select",
+  "settings" => "my_custom_select2",
   "type" => "select",
   "choices" => array(
     "show_posts" => 'Yes',
@@ -351,7 +351,7 @@ $wp_customize->add_control(new WP_Customize_Image_Control(
     "type" => "number",
     'input_attrs' => array(
       'min' => 5,
-      'max' => 50
+      'max' => 500
     )
   ));
 }

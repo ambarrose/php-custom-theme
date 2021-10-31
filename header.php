@@ -19,5 +19,6 @@
 		      <a class="navbar" href="<?php echo home_url(); ?>"><img id="logo" src="<?php bloginfo('stylesheet_directory') ?>/images/eco-logogreenBG.png" alt="logo"></a>
 					<a id="about-link" class="nav-link text-light" href="<?php echo get_page_link(get_page_by_path('about-eco')); ?>">About</a>
 					<a id="join-link" class="nav-link text-light " href="<?php echo get_page_link(get_page_by_path('join-us')); ?>">Join us</a>
+					<a id="cart-link" class="nav-link text-light " href="<?php echo get_page_link(get_page_by_path('cart')); ?>">Cart</a>
 		    </div>
 		  </nav>

@@ -25,7 +25,8 @@
 
             <!-- here's the area where it loops over each post -->
             <div class="col col-md-3">
-                 <div class="card rounded border-danger mb-3" style="width: 100%">
+                 <div class="card mb-3">
+                   <?php the_post_thumbnail("medium", ['class'=>'card-img-top']); ?>
                    <div class="card-body">
                      <h5 class="card-title">
                        <a href="<?php the_permalink(); ?>">
@@ -33,11 +34,10 @@
                        </a>
                      </h5>
 
-                     <p>Posted: <?php echo get_the_date('F j, Y'); ?></p>
-                     <p class="card-text text-dark"><?php the_excerpt(); ?></p>
+                     <p>Posted: <?php echo get_the_date(); ?></p>
+                     <p class="card-text"><?php new_excerpt_length(); ?></p>
 
                      <button id="link" class="rounded-pill text-light" type="button" name="button" href="<?php the_permalink(); ?>">Read More</button>
-
                    </div>
                  </div>
             </div>
@@ -88,6 +88,15 @@
           endif;
           ?>
   </div>
+        <!-- <div class="row">
+          <div class="col-12">
+            <ul class="list-group">
+              <li class="list-group-item">Email</li>
+              <li class="list-group-item">Phone</li>
+            </ul>
+          </div>
+        </div> -->
+        <?php echo do_shortcode('[contact-form-7 id="34" title="Contact form 1"]'); ?>
 </div>
   <?php echo get_theme_mod("my_new_message")
   ?>

@@ -21,10 +21,18 @@ h3,
 h5 {
   color: white;
 }
+/* h2{
+  width:180px;
+} */
+
+a{
+  text-decoration: none;
+  color: black;
+}
 
 .card{
-  /* width: 500px; */
-  height: 400px;
+
+  height: 420px;
 }
 .card-image-top {
   width: 100%!important;
@@ -34,6 +42,8 @@ h5 {
 
 #logo {
   height:100px;
+  margin-left: 100px;
+
 }
 .woocommerce .cart-collaterals, .woocommerce-page .cart-collaterals {
     width: 40%;
@@ -41,10 +51,6 @@ h5 {
 
 #nav{
   background-color: #1A7375;
-}
-
-#logo{
-  margin-left: 100px;
 }
 
 #about-link{
@@ -56,8 +62,16 @@ h5 {
 }
 
 #about-link:hover,
-#join-link:hover{
+#join-link:hover,
+#cart-link:hover{
   background-color: #232829;
+}
+
+#cart-link{
+  border: 2px solid #232829;
+  height:50px;
+  width:140px;
+  text-align: center;
 }
 
 #join-link{
@@ -134,7 +148,18 @@ h5 {
   align-items: center;
   margin: auto;
   margin-top: 30px;
-  width: 800px;
+  width: 900px;
+}
+
+.product{
+  background-color: black;
+  height:380px;
+  width: 200px;
+}
+
+.option-cards{
+  text-align: center;
+
 }
 
 .welcome{
@@ -160,7 +185,7 @@ h5 {
   border: none;
   width: 200px;
   height: 40px;
-  margin-top: 20px;
+
 }
 #link:hover{
   background-color: #161414;
@@ -174,4 +199,14 @@ h5 {
 
 .year{
   margin-left: 280px;
+}
+
+/* cart sryles begin */
+
+#coupon_code{
+  width:130px;
+}
+
+.checkout{
+  background-color: black!important;
 }
