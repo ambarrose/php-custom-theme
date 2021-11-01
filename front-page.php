@@ -7,7 +7,7 @@
     </div>
 
     <div id="signUp">
-      <h3 class="friend text-light">Become a Friend of ECO</h3>
+      <h2 class="friend text-light">Become a Friend of ECO</h2>
       <button id="link" class="rounded-pill text-light" type="button" name="button"><a class="nav-link text-light " href="<?php echo get_page_link(get_page_by_path('join-us')); ?>">Sign-up & Support</a></button>
     </div>
 
@@ -51,7 +51,7 @@
       <div class="container fluid mt-5 mb-5">
        <div class="row">
            <div class="col-12">
-            <h2>key issues</h2>
+            <h2>Key issues</h2>
           </div>
         <?php
         query_posts(array(

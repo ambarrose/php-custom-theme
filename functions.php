@@ -309,7 +309,7 @@ $wp_customize->add_control(new WP_Customize_Image_Control(
   $wp_customize, 'custom_image', array(
       'label' => 'Upload a custom image',
       'settings' => 'custom_image',
-      'section' => 'tims_section',
+      'section' => 'ambars_section',
       'priority' => 1000
   ))
 );
@@ -442,5 +442,13 @@ function woocommerce_shortcode_display_all_products($args)
  return $args;
 }
 add_filter('woocommerce_shortcode_products_query', 'woocommerce_shortcode_display_all_products');
+
+
+function remove_gallery_thumbnail_images() {
+if ( is_product() ) {
+    remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
+    }
+}
+add_action('loop_start', 'remove_gallery_thumbnail_images');
 
 ?>

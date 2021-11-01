@@ -17,54 +17,32 @@ Tags: minimal, cool, whitespace
 */
 
 h1,
-h3,
-h5 {
+h2{
   color: white;
 }
-/* h2{
-  width:180px;
-} */
 
 a{
   text-decoration: none;
   color: black;
 }
 
-.card{
-
-  height: 420px;
-}
-.card-image-top {
-  width: 100%!important;
-  height: 200px !important;
-  object-fit: cover!important;
+/* navigation starts */
+#nav{
+  background-color: #1A7375;
 }
 
 #logo {
   height:100px;
   margin-left: 100px;
-
-}
-.woocommerce .cart-collaterals, .woocommerce-page .cart-collaterals {
-    width: 40%;
 }
 
-#nav{
-  background-color: #1A7375;
-}
-
+/* buttons start */
 #about-link{
   border: 2px solid #232829;
   height:50px;
   width:140px;
   margin-left: 700px;
   text-align: center;
-}
-
-#about-link:hover,
-#join-link:hover,
-#cart-link:hover{
-  background-color: #232829;
 }
 
 #cart-link{
@@ -81,6 +59,15 @@ a{
   text-align: center;
 }
 
+#about-link:hover,
+#join-link:hover,
+#cart-link:hover{
+  color: #1A7375!important;
+  background-color: #232829;
+}
+/* navigation ENDS */
+
+/* home page section starts */
 #full-page{
   background-image: url(images/fern.jpg);
   width: 100%;
@@ -90,15 +77,27 @@ a{
   background-size: cover;
 }
 
+/* home page news items starts */
 #main{
   background-color: white;
   border-bottom: 2px solid #1A7375;
 }
 
-.row{
+/* .row{
   margin-bottom: 40px;
+} */
+
+/* home page cards */
+.card{
+  height: 420px;
+}
+.card-image-top {
+  width: 100%!important;
+  height: 200px !important;
+  object-fit: cover!important;
 }
 
+/* about us page starts */
 #about{
   background-image: url(images/planting.jpg);
   width: 100%;
@@ -126,6 +125,7 @@ a{
   background-size: cover;
 }
 
+/* text details */
 #info{
   justify-content: center;
   align-items: center;
@@ -134,10 +134,11 @@ a{
   width: 800px;
 }
 
+/* members page starts */
 #join-us{
   background-image: url(images/planting.jpg);
   width: 100%;
-  height: 860px;
+  height: 890px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -152,14 +153,43 @@ a{
 }
 
 .product{
-  background-color: black;
-  height:380px;
+  background-color: white;
+  border: 2px solid #1A7375;
+  border-radius: 30px!important;
+  height: 250px;
   width: 200px;
+}
+
+/* members cards text */
+
+h2.woocommerce-loop-product__title {
+  padding: 1rem!important;
+  margin-top: 1.5rem!important;
 }
 
 .option-cards{
   text-align: center;
+}
 
+img.woocommerce-placeholder{
+display: none!important;
+}
+
+bdi{
+  font-size: 1.3rem;
+  color: #1A7375!important;
+}
+
+a.button{
+  background-color: white!important;
+  color: #1A7375!important;
+  border: 2px solid #1A7375!important;
+  border-radius: 20px!important;
+}
+
+a.button:hover{
+  background-color: #1A7375!important;
+  color: white!important;
 }
 
 .welcome{
@@ -201,12 +231,12 @@ a{
   margin-left: 280px;
 }
 
-/* cart sryles begin */
+/* cart styles begin */
 
 #coupon_code{
   width:130px;
 }
 
-.checkout{
-  background-color: black!important;
+.woocommerce .cart-collaterals, .woocommerce-page .cart-collaterals {
+    width: 40%;
 }
