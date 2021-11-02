@@ -16,8 +16,8 @@ License: GNU General Public License v2 or later
 Tags: minimal, cool, whitespace
 */
 
-h1,
-h2{
+
+h4{
   color: white;
 }
 
@@ -68,13 +68,17 @@ a{
 /* navigation ENDS */
 
 /* home page section starts */
-#full-page{
-  background-image: url(images/fern.jpg);
-  width: 100%;
-  height:700px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.custom-img {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.welcome{
+  position: absolute;
+  margin-top: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* home page news items starts */
@@ -83,18 +87,31 @@ a{
   border-bottom: 2px solid #1A7375;
 }
 
-/* .row{
-  margin-bottom: 40px;
-} */
-
 /* home page cards */
 .card{
-  height: 420px;
+  height: auto!important;
 }
-.card-image-top {
-  width: 100%!important;
+
+.card-image-top{
+  width: auto!important;
   height: 200px !important;
   object-fit: cover!important;
+}
+
+.col-12{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.btn-primary{
+  color: white!important;
+  background-color: #1A7375;
+  border: none;
+}
+
+.btn-primary:hover{
+  color: #1A7375!important;
+  background-color: #232829;
 }
 
 /* about us page starts */
@@ -138,7 +155,7 @@ a{
 #join-us{
   background-image: url(images/planting.jpg);
   width: 100%;
-  height: 890px;
+  height: 980px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -156,7 +173,7 @@ a{
   background-color: white;
   border: 2px solid #1A7375;
   border-radius: 30px!important;
-  height: 250px;
+  height: 280px;
   width: 200px;
 }
 
@@ -177,23 +194,56 @@ display: none!important;
 
 bdi{
   font-size: 1.3rem;
-  color: #1A7375!important;
+  /* color: #1A7375!important; */
 }
-
+.price{
+  margin-top: 30px!important;
+}
 a.button{
-  background-color: white!important;
-  color: #1A7375!important;
+  margin-top: 30px!important;
+  background-color: #1A7375!important;
+  color: white!important;
   border: 2px solid #1A7375!important;
   border-radius: 20px!important;
 }
 
 a.button:hover{
-  background-color: #1A7375!important;
-  color: white!important;
+  background-color: white!important;
+  color: #1A7375!important;
 }
 
-.welcome{
-  margin-top: 300px;
+/* cart styles begin */
+
+#coupon_code{
+  width:130px;
+}
+
+#place_order{
+  margin-top: 30px!important;
+  background-color: #1A7375!important;
+  color: white!important;
+  border: 2px solid #1A7375!important;
+  border-radius: 20px!important;
+}
+
+#place_order:hover{
+  background-color: white!important;
+  color: #1A7375!important;
+}
+
+.woocommerce-info{
+  border-top-color: #1A7375!important;
+}
+
+#order_review_heading{
+  margin-top: 50px;
+}
+#payment{
+  margin-bottom: 50px;
+}
+
+.woocommerce .cart-collaterals, .woocommerce-page .cart-collaterals {
+    width: 40%;
 }
 
 #signUp{
@@ -215,10 +265,23 @@ a.button:hover{
   border: none;
   width: 200px;
   height: 40px;
-
 }
 #link:hover{
   background-color: #161414;
+}
+
+.card-body button{
+  display: flex;
+}
+
+#card-link{
+  justify-content: center!important;
+  align-items: center!important;
+  background-color: #A22F2C;
+  border: none;
+  margin: auto;
+  width: 200px;
+  height: 40px;
 }
 
 
@@ -229,14 +292,4 @@ a.button:hover{
 
 .year{
   margin-left: 280px;
-}
-
-/* cart styles begin */
-
-#coupon_code{
-  width:130px;
-}
-
-.woocommerce .cart-collaterals, .woocommerce-page .cart-collaterals {
-    width: 40%;
 }

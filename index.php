@@ -15,9 +15,10 @@
 			 </div>
 		 </div>
 				 <!-- <p>This is the index template</p> -->
+				  <?php get_footer(); ?>
  </body>
 
- <?php get_footer(); ?>
+
 © 2021 GitHub, Inc.
 Terms
 Privacy

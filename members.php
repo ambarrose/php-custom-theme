@@ -23,14 +23,21 @@ Template Name: Sign up template
     Help ensure that there is a strong New Zealand advocate for the environment;
     Receive up-to-date information so you can participate in protecting the environment, including ECO’s quarterly newsletter ECOlink;
     Receive invitations to conferences and seminars;
-    Enable ECO to develop and realise its long-term environmental goals.
+    Enable ECO to develop and realise its long-term environmental goals.</p>
     <br><br><br>
-    <div class="option-cards text-light">
+    <div class="option-cards">
       <?php
       echo do_shortcode('[products ids="all"]');
        ?>
     </div>
-
+    <p class="text-light">By becoming a ‘Friend of ECO’ you will:
+      <ul class="text-light">
+        <li>Help ensure that there is a strong New Zealand advocate for the environment</li>
+        <li>Receive up-to-date information so you can participate in protecting the environment, including ECO’s quarterly newsletter ECOlink</li>
+        <li>Receive invitations to conferences and seminars</li>
+        <li>Enable ECO to develop and realise its long-term environmental goals</li>
+      </ul>
+    </p>
   </div>
 
 </div>

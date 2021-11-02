@@ -7,10 +7,10 @@
         </div>
         <div class="col-8 pl-4">
 
-            <a id="btn" class="link-light text-decoration-none mx-5" href="#">About us</a>
-            <a id="btn" class="link-light text-decoration-none mx-5" href="#">Join us</a>
-            <a id="btn" class="link-light text-decoration-none mx-5" href="#">News</a>
-            <a id="btn" class="link-light text-decoration-none mx-5" href="#">Key items</a>
+            <a id="btn" class="link-light text-decoration-none mx-5" href="<?php echo get_page_link(get_page_by_path('about-eco')); ?>">About us</a>
+            <a id="btn" class="link-light text-decoration-none mx-5" href="<?php echo get_page_link(get_page_by_path('join-us')); ?>">Join us</a>
+            <a id="btn" class="link-light text-decoration-none mx-5" href="<?php echo home_url(); ?>">News</a>
+            <a id="btn" class="link-light text-decoration-none mx-5" href="<?php echo home_url(); ?>">Key items</a>
 
         </div>
       </div>

@@ -234,7 +234,7 @@ function phone_email_custom($fields){
 function my_first_customised_option($wp_customize){
   $wp_customize->add_section("ambars_section",
    array(
-    "title" => "My first section",
+    "title" => "Landing page section",
     "priority" => 0
   ));
 
@@ -248,17 +248,21 @@ function my_first_customised_option($wp_customize){
     "default" => ""
   ));
   // add a new number setting
-  $wp_customize->add_setting("my_custom_number", array(
-    "default" => 0
-  ));
+  // $wp_customize->add_setting("my_custom_number", array(
+  //   "default" => 0
+  // ));
 
   // add a new number setting for custom excerpts
 $wp_customize->add_setting("custom_excerpt_length", array(
-  "default" => 500
+  "default" => 1000
 ));
 
 // add a new color picker setting
 $wp_customize->add_setting("color_picker", array(
+  "default" => ""
+));
+
+$wp_customize->add_setting("price_color_picker", array(
   "default" => ""
 ));
 
@@ -301,16 +305,28 @@ $wp_customize->add_control("my_custom_select2", array(
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'color_picker', array(
     'label' => 'Link Colors',
     'section' => 'ambars_section',
-    'settings' => 'color_picker'
-  )));
+    'settings' => 'color_picker',
+    'priority' => 2
+  )
+));
+
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'price_color_picker', array(
+    'label' => 'Price Text Colors',
+    'section' => 'ambars_section',
+    'settings' => 'price_color_picker',
+    'priority' => 2
+  )
+));
+
+
 
 // add our custom image control
 $wp_customize->add_control(new WP_Customize_Image_Control(
   $wp_customize, 'custom_image', array(
-      'label' => 'Upload a custom image',
+      'label' => 'Upload a full screen home image',
       'settings' => 'custom_image',
       'section' => 'ambars_section',
-      'priority' => 1000
+      'priority' => 0
   ))
 );
 
@@ -324,25 +340,25 @@ $wp_customize->add_control(new WP_Customize_Image_Control(
   ));
 
 
-  $wp_customize->add_control("my_new_message",
-  array(
-    "label" => "Enter a custom message",
-    "section" => "ambars_section",
-    "settings" => "my_new_message",
-    "type" => "textarea"
-  ));
+  // $wp_customize->add_control("my_new_message",
+  // array(
+  //   "label" => "Enter a new custom message",
+  //   "section" => "ambars_section",
+  //   "settings" => "my_new_message",
+  //   "type" => "textarea"
+  // ));
 
-  // heres the control for our new number
-  $wp_customize->add_control("my_custom_number", array(
-    "label" => "Enter a number",
-    "section" => "ambars_section",
-    "settings" => "my_custom_number",
-    "type" => "number",
-    'input_attrs' => array(
-      'min' => 0,
-      'max' => 12
-    )
-  ));
+  // // heres the control for our new number
+  // $wp_customize->add_control("my_custom_number", array(
+  //   "label" => "Enter a number",
+  //   "section" => "ambars_section",
+  //   "settings" => "my_custom_number",
+  //   "type" => "number",
+  //   'input_attrs' => array(
+  //     'min' => 0,
+  //     'max' => 12
+  //   )
+  // ));
 
   $wp_customize->add_control("custom_excerpt_length", array(
     "label" => "Excerpt length",
@@ -351,7 +367,7 @@ $wp_customize->add_control(new WP_Customize_Image_Control(
     "type" => "number",
     'input_attrs' => array(
       'min' => 5,
-      'max' => 500
+      'max' => 1000
     )
   ));
 }
@@ -363,7 +379,7 @@ $wp_customize->add_control(new WP_Customize_Image_Control(
   function new_customised_option($wp_customize){
     $wp_customize->add_section("number_section",
      array(
-      "title" => "My customised number section",
+      "title" => "Col customised number section",
       "custom_setting",
       "priority" => 0
     ));
@@ -380,11 +396,25 @@ $wp_customize->add_control(new WP_Customize_Image_Control(
       "settings" => "custom_number",
       "type" => "number",
       'input_attrs' => array(
-        'min' => 0,
-        'max' => 10
+        'min' => 3,
+        'max' => 20
       )
     ));
+
+    $wp_customize->add_setting('eco_title', array(
+    'default' => 'Environment & Conservation Organisations of Aotearoa New Zealand'
+    ));
+
+     $wp_customize->add_control('eco_title', array(
+    'label' => 'Enter page Title',
+    'section' => 'ambars_section',
+    'settings' => 'eco_title',
+    'type' => 'text',
+    'priority' => 1
+    ));
+
   }
+
 
   add_action("customize_register","new_customised_option");
 
@@ -416,11 +446,27 @@ function bootstrap_changes($wp_customize) {
 add_action("customize_register", "bootstrap_changes");
 
 function generate_special_css() {
+  $bg_img = get_theme_mod('custom_image');
   $color_picker = get_theme_mod('color_picker');
+  $price_color_picker = get_theme_mod('price_color_picker');
   ?>
   <style type="text/css">
+    .custom-img {
+        height: 700px;
+    }
+    .custom-img img{
+      background-image: <?php echo $bg_img ?>;
+      width: 100%;
+      height: 700px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
     .card-title a {
-      color: <?php echo $color_picker; ?>
+      color: <?php echo $color_picker ?>;
+    }
+    bdi {
+      color: <?php echo $price_color_picker ?>;
     }
 
   </style>
@@ -450,5 +496,8 @@ if ( is_product() ) {
     }
 }
 add_action('loop_start', 'remove_gallery_thumbnail_images');
+
+
+
 
 ?>
